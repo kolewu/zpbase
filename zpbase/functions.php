@@ -311,7 +311,7 @@ function printBaseSlideShowLink($linktext = null) {
 		} else {
 			if (isset($_POST['favorites_page'])) {
 				$albumobj = $_myFavorites;
-				$returnpath = getCustomPageURL('favorites', 'page=' . $pagenumber);
+				$returnpath = $_myFavorites->getLink($pagenumber);
 				$albumtitle = gettext('Favorites');
 			} else {
 				$albumq = query_single_row("SELECT title, folder FROM " . prefix('albums') . " WHERE id = " . $albumid);
